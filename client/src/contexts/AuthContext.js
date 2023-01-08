@@ -8,7 +8,7 @@ export const AuthContext = createContext();
 
 const AuthContextProvider = ({children}) => {
     const [authState, dispatch] = useReducer(authReducer, {
-        authLoading: true,
+        authLoading: false,
         isAuthenticated: false,
         user: null
     });
