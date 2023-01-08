@@ -1,0 +1,85 @@
+### Register
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "nguyenbaotran",
+    "password": "tran#1234"
+}
+
+#### Login
+
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "nguyenlananh",
+    "password": "anh#1234"
+}
+
+### Create Post
+POST http://localhost:5000/api/posts
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2FiYjhhZTMzMDMyNjU5NTJhYjE0MzAiLCJpYXQiOjE2NzIxOTgzMzN9.6IOvFN0xLq4WVz3Cp-hs0UHvf01od0Tdavz7XTmH7SI
+
+{
+    "title": "Learn Acting",
+    "description": "Learn Acting with 2 hours tutorial on Youtube",
+    "url": "https://youtube.com",
+    "status": "LEARNING"
+}
+
+### Get Posts
+GET  http://localhost:5000/api/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2FiYjhhZTMzMDMyNjU5NTJhYjE0MzAiLCJpYXQiOjE2NzIxOTgzMzN9.6IOvFN0xLq4WVz3Cp-hs0UHvf01od0Tdavz7XTmH7SI
+
+### Update Post
+PUT  http://localhost:5000/api/posts/63abba9946b234ad7c2457e1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2FiYjhhZTMzMDMyNjU5NTJhYjE0MzAiLCJpYXQiOjE2NzIxOTgzMzN9.6IOvFN0xLq4WVz3Cp-hs0UHvf01od0Tdavz7XTmH7SI
+
+{
+    "title": "Learn Acting for Actor/Actress",
+    "description": "Learn Acting at school",
+    "url": "https://youtube.com",
+    "status": "LEARNED"
+}
+
+### Delete Post
+DELETE  http://localhost:5000/api/posts/63abb7869c357d52f3f1c554
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2FhY2YzMTFmNTQ3Y2ZlOWRmMzY5YzEiLCJpYXQiOjE2NzIyMDY4ODd9.ms9PsQ_yTE4X8P_m7Awh-fiVsLQIWos4bD0AwjmmoYw
+
+### Create Comment
+POST http://localhost:5000/api/comments
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2FiYjhhZTMzMDMyNjU5NTJhYjE0MzAiLCJpYXQiOjE2NzIxOTgzMzN9.6IOvFN0xLq4WVz3Cp-hs0UHvf01od0Tdavz7XTmH7SI
+
+{
+    "description": "I do not prefer ReactJS",
+    "post": "63abb8f13303265952ab1433"
+}
+
+### Get Comment for a User
+GET  http://localhost:5000/api/comments
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2FiYjhhZTMzMDMyNjU5NTJhYjE0MzAiLCJpYXQiOjE2NzIxOTgzMzN9.6IOvFN0xLq4WVz3Cp-hs0UHvf01od0Tdavz7XTmH7SI
+
+
+### Get Comment for a Post
+GET  http://localhost:5000/api/comments/63abb8f13303265952ab1433
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2FiYjhhZTMzMDMyNjU5NTJhYjE0MzAiLCJpYXQiOjE2NzIxOTgzMzN9.6IOvFN0xLq4WVz3Cp-hs0UHvf01od0Tdavz7XTmH7SI
+
+
+### Update Comment
+PUT  http://localhost:5000/api/comments/63abed2ef7e73ae061c83cba
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2FiYjhhZTMzMDMyNjU5NTJhYjE0MzAiLCJpYXQiOjE2NzIxOTgzMzN9.6IOvFN0xLq4WVz3Cp-hs0UHvf01od0Tdavz7XTmH7SI
+
+{
+    "description": "React Js is JS library. Difficult to learn. But it is rewarding",
+    "post": "63abb8f13303265952ab1433"
+}
+
+### Delete Comment
+DELETE  http://localhost:5000/api/comments/63abf673c518360528d871d9
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2FiYjhhZTMzMDMyNjU5NTJhYjE0MzAiLCJpYXQiOjE2NzIxOTgzMzN9.6IOvFN0xLq4WVz3Cp-hs0UHvf01od0Tdavz7XTmH7SI
